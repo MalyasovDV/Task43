@@ -4,17 +4,17 @@
     return number;
 }
 
-float FindY(float k,float b, float x)
+float FindY(ref float k,ref float b, ref float x)
 {
     float y = k*x + b;
     return y;
 }
 
-void FindIntersectionPoint(float k1, float b1, float k2, float b2)
+void FindIntersectionPoint(ref float k1, ref float b1, ref float k2, ref float b2)
 {
     float x = (b2-b1)/(k1-k2);
 
-    Console.WriteLine("(" + x + ";" + FindY(k1,b1,x) + ")");
+    Console.WriteLine("(" + x + ";" + FindY(ref k1, ref b1, ref x) + ")");
 }
 
 float k1, b1, k2, b2;
@@ -26,4 +26,4 @@ b2 = Input();
 
 Console.WriteLine(k1 + " " + b1 + " " + k2 + " " + b2);
 
-FindIntersectionPoint(k1, b1, k2, b2);
+FindIntersectionPoint(ref k1, ref b1, ref k2, ref b2);
